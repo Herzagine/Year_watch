@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Круг с 12 секторами</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .circle {
+            width: 600px;  /* Увеличен вдвое (было 300px) */
+            height: 600px; /* Увеличен вдвое (было 300px) */
+            border-radius: 50%;
+            background: conic-gradient(
+                /* Верхние 3 сектора - бледно-красные */
+                rgba(255, 182, 193, 0.7) 0deg 90deg,
+                /* Правые 3 сектора - бледно-оранжевые */
+                rgba(255, 218, 185, 0.7) 90deg 180deg,
+                /* Нижние 3 сектора - бледно-голубые */
+                rgba(173, 216, 230, 0.7) 180deg 270deg,
+                /* Левые 3 сектора - бледно-зеленые */
+                rgba(144, 238, 144, 0.7) 270deg 360deg,
+                /* Добавляем разделитель после последнего сектора */
+                #4E5754 360deg 361deg,
+                rgba(255, 182, 193, 0.7) 361deg
+            );
+            position: relative;
+            transform: rotate(-45deg);
+        }
+        
+        /* Разделительные линии между секторами */
+        .circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                transparent 0deg 29.5deg,
+                #4E5754 29.5deg 30deg,
+                transparent 30deg 59.5deg,
+                #4E5754 59.5deg 60deg,
+                transparent 60deg 89.5deg,
+                #4E5754 89.5deg 90deg,
+                transparent 90deg 119.5deg,
+                #4E5754 119.5deg 120deg,
+                transparent 121deg 149.5deg,
+                #4E5754 149.5deg 150deg,
+                transparent 151deg 179.5deg,
+                #4E5754 179.5deg 180deg,
+                transparent 181deg 209.5deg,
+                #4E5754 209.5deg 210deg,
+                transparent 211deg 239.5deg,
+                #4E5754 239.5deg 240deg,
+                transparent 241deg 269.5deg,
+                #4E5754 269.5deg 270deg,
+                transparent 271deg 299.5deg,
+                #4E5754 299.5deg 300deg,
+                transparent 301deg 329.5deg,
+                #4E5754 329.5deg 330deg,
+                transparent 331deg 359.5deg,
+                #4E5754 359.5deg 360deg
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>
